@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 10vw;
+  margin-top: 5vw;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: large;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin: 5vw;
+}
+h1 {
+  color: #007bff;
+}
+p {
+  margin-bottom: 2vw;
+}
+
+pre {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: 10px;
+}
+code {
+  min-width: 40vw;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  font-family: "JetBrains Mono", monospace;
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+
+  margin: 25px;
+}
+
+#solution {
+  text-align: center;
+}

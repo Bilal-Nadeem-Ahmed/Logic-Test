@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
+    <title>Microlise Logic test</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Microlise Logic Test</h1>
+        <br>
+        
+        <figure>
+            <figcaption>The following passage has had a number of changes made to it: 
+            </figcaption>
+            <br><br>
+            <pre>
+              <code>
+                Scrambled= [‘Up evoba the dlrow FIRE hgih’,
+                             ‘Twinkle elkniwt little rats’,
+                             ‘Like a diamond ERIF the yks’,
+                             ‘FIRE I wonder tahw you ERIF’]
+              </code>
+            </pre>
+          </figure>
+          <br>
+          <p>
+            Using this scrambled version can you do the following:
+          </p>
+         
+          <ol>
+              <li>Work out what each of the changes are?</li>
+              <li>Create a solution that undoes these changes, outputting theoriginaltext shown below?</li>
+          </ol>
+          <figure>
+            <pre>
+              <code>
+                Original= [
+                          ‘Twinkletwinkle little star’,
+                          ‘How I wonder what you are’,
+                          ‘Up above the world so high’,
+                          ‘Like a diamond in the sky’
+                          ]
+              </code>
+            </pre>
+          </figure>
+
+          <p>You can create the solution in any language you wish. But we expect it to take the form of a runnable function that takes in the scrambled input and outputs the original text. With the sections that make the changes clearly marked i.e., each change to the text is a function.</p>
+
+          <figure>
+              <figcaption>For Example :</figcaption>
+              <pre>
+                  <code>
+                    Public List &lt;string&gt; Unscramble(List&lt;string&gt; input) {
+                           Var foo = ChangeFunction1(input);
+                           Var bar = ChangeFunction2(foo);
+                           Etc...
+                           return output;}
+                  </code>
+              </pre>
+          </figure>
+          <H2>My solution!</H2>
+
+          <p>First I identified the changes which were: </p>
+          <ul>
+              <li>The sentences were out of order</li>
+              <li>Every second word of a sentence was reversed</li>
+              <li>Every fifth word was replaced with the word ‘Fire’</li>
+          </ul>
+
+          <p>So first I created a function that re-order the array:</p>
+
+          <figure>
+            
+            <pre>
+                <code>
+                    const fixArrayOrderAndSplit =(arr)=>{
+                        let newArr=[];
+                    
+                        newArr[0] = arr[1].split(' ');
+                        newArr[1] = arr[3].split(' ');
+                        newArr[2] = arr[0].split(' ');
+                        newArr[3] = arr[2].split(' ');
+                       
+                        return newArr
+                         
+                    }
+                </code>
+            </pre>
+        </figure>
+        <p>Secondly I created a function that will reverse the word:</p>
+        <figure>
+            
+            <pre>
+                <code>
+                    const reverseSecondWordInArray = (arr)=&gt;{
+
+                        let newArr = arr
+                        for(let i = 0; i&lt;arr.length;i++){
+                            
+                            for(let j=1;j&lt;arr[i].length;j++)
+                            if(j % 2 === 1){
+                                newArr[i][j] = arr[i][j].split('').reverse().join('') 
+                            }
+                    
+                        }
+                      return newArr  
+                    }
+                </code>
+            </pre>
+        </figure>
+        <p>Finally, a function that would replace the word fire with the correct word :</p>
+        <figure>
+            
+            <pre>
+                <code>
+                    const replaceFireandJoin=(arr)=>{
+
+                        let newArr= arr
+                    
+                        newArr[1][0]='How'
+                        newArr[1][5]='are'
+                        newArr[2][4]='so'
+                        newArr[3][3]='in'
+                    
+                        return newArr.map(element => element.join(' '))
+                    
+                    }
+                </code>
+            </pre>
+        </figure>
+
+        <h3>By calling the above functions with the Scrambled array as the first functions parameter, you can expect the below result :</h3>
+          <p id='solution' ></p>
+
+          
+
+         
+    </div>
+    <script src='index.js'></script>
+</body>
+</html>
