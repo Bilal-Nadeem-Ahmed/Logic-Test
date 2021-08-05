@@ -1,4 +1,7 @@
+// live site can be found at https://bilal-nadeem-ahmed.github.io/Logic-Test/
+
 let Scrambled= ['Up evoba the dlrow FIRE hgih','Twinkle elkniwt little rats','Like a diamond ERIF the yks','FIRE I wonder tahw you ERIF']
+
 
 const fixArrayOrderAndSplit =(arr)=>{
     let newArr=[];
@@ -12,13 +15,7 @@ const fixArrayOrderAndSplit =(arr)=>{
      
 }
 
-// const reverseWord = (word)=>{
-    
-//     let reversedWord = word.split('').reverse().join('')
-    
-//     return reversedWord
-    
-//     }
+
     
 
 const reverseSecondWordInArray = (arr)=>{

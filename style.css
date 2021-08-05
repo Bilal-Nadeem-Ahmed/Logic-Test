@@ -7,6 +7,10 @@ body {
   margin-top: 5vw;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: large;
+  max-width: 100vw;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
 h1,
@@ -29,7 +33,7 @@ pre {
   margin: 10px;
 }
 code {
-  min-width: 40vw;
+  min-width: fit-content;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   font-family: "JetBrains Mono", monospace;
